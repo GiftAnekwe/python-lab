@@ -1,4 +1,4 @@
-#CHAPTER 1&2: INPUT AND VARIABLES
+#CHAPTER 1&2: HELLO WORLD AND VARIABLES
 #Pythagorean theorem
 a = float(input("Give 'a' a number: "))
 b = float(input("Give 'b' a number: "))
@@ -102,3 +102,66 @@ print("                                  ")
 #Relational operators are used to compare two values: ==, !=, >, >=, <, <=.
 #Logical operators are used to combine two or more conditions: and, or, not.
 
+#PUTTING LESSONS FROM THE CHAPTER ALL TOGETHER
+# Initialize scores
+Gry = 0
+Rav = 0
+Huf = 0
+Sly = 0
+
+# Question 1
+print("Do you like Dawn or Dusk?")
+q1 = int(input("Enter 1 for 'Dawn' and 2 for 'Dusk': "))
+
+if q1 == 1:
+    Gry += 1
+    Rav += 1
+elif q1 == 2:
+    Huf += 1
+    Sly += 1
+else:
+    print("Wrong input.")
+
+print()
+
+# Question 2
+print("When I'm dead, I want people to remember me as:")
+q2 = int(input("Enter 1 for 'The Good', 2 for 'The Great', 3 for 'The Wise', 4 for 'The Bold': "))
+
+if q2 == 1:
+    Huf += 2
+elif q2 == 2:
+    Sly += 2
+elif q2 == 3:
+    Rav += 2
+elif q2 == 4:
+    Gry += 2
+else:
+    print("Wrong input.")
+
+print()
+
+# Question 3
+print("Which kind of instrument most pleases your ear?")
+q3 = int(input("Enter 1 for 'The violin', 2 for 'The trumpet', 3 for 'The piano', 4 for 'The drum': "))
+
+if q3 == 1:
+    Sly += 4
+elif q3 == 2:
+    Huf += 4
+elif q3 == 3:
+    Rav += 4
+elif q3 == 4:
+    Gry += 4
+else:
+    print("Wrong input.")
+
+print("\nFinal Scores:")
+print("Gryffindor:", Gry)
+print("Ravenclaw:", Rav)
+print("Hufflepuff:", Huf)
+print("Slytherin:", Sly)
+
+###################################################################################################################################
+
+#CHAPTER 4: LOOPS
