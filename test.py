@@ -218,3 +218,107 @@ for i in range(1, 101, 1):
   else:
     print(f'{i}')
 print("                                  ")
+
+#CHECKPOINT PROJECT: Creating rock_paper_scissors game
+#My version....
+import random
+again = 'yes'.lower()
+
+while again == 'yes'.lower():
+  print('=====================')
+  print('Rock Paper Scissors')
+  print('=====================')
+  player = int(input("Pick a number: "))
+  computer = random.randint(1, 3)
+
+  print('\n')
+  if player == 1:
+    print('You chose: ✊')
+  elif player == 2:
+    print('You chose: ✋')
+  elif player == 3:
+    print('You chose: ✌️')
+  else:
+    print('Wrong input, please try again.')
+
+  if computer == 1:
+    print('Computer chose: ✊')
+  elif computer == 2:
+    print('Computer chose: ✋')
+  elif computer == 3:
+    print('Computer chose: ✌️')
+  else:
+    print('System error.')
+    
+  if player == computer:
+      print("It's a tie.")
+  elif player == 1 and computer == 2:
+    print("Computer won!")
+  elif player == 1 and computer == 3:
+    print("Player won!")
+  elif player == 2 and computer == 1:
+    print("Player won!")
+  elif player == 2 and computer == 3:
+    print("Computer won!")
+  elif player == 3 and computer == 1:
+    print("Computer won!")
+  elif player == 3 and computer == 2:
+    print("Player won!")
+  else:
+    print('Error!!!')
+
+  print('Play another round? ')
+  again = input("Enter yes or no: ")
+  print(again)
+print()
+
+#Standard correct version...
+import random
+again = 'yes'
+while again.lower() == 'yes':  # make yes/no forgiving
+    print('=====================')
+    print('Rock Paper Scissors')
+    print('=====================')
+    print("1) ✊\n2) ✋\n3) ✌️")
+
+    # input validation loop
+    player = 0
+    while player not in [1, 2, 3]:
+        try:
+            player = int(input("Pick a number: "))
+            if player not in [1, 2, 3]:
+                print("Invalid choice, pick 1, 2, or 3.")
+        except ValueError:
+            print("Please enter a number.")
+
+    computer = random.randint(1, 3)
+
+    # show choices
+    if player == 1:
+        print("You chose: ✊")
+    elif player == 2:
+        print("You chose: ✋")
+    elif player == 3:
+        print("You chose: ✌️")
+
+    if computer == 1:
+        print("Computer chose: ✊")
+    elif computer == 2:
+        print("Computer chose: ✋")
+    elif computer == 3:
+        print("Computer chose: ✌️")
+
+    # decide winner
+    if player == computer:
+        print("It's a tie.")
+    elif (player == 1 and computer == 3) or \
+         (player == 2 and computer == 1) or \
+         (player == 3 and computer == 2):
+        print("Player won!")
+    else:
+        print("Computer won!")
+
+    # ask to play again
+    again = input("Play another round? Enter yes or no: ")
+    print()  # blank line for readability
+
